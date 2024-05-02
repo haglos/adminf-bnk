@@ -93,7 +93,7 @@ export const checkIfAdminIsLoggedIn = () => {
       }
       
     
-      response = await fetch(`https://backend-frank2.onrender.com/adminbytoken`, {
+      response = await fetch(`local/adminbytoken`, {
         method: "GET",
         headers:{
           "Content-Type": "application/json",
@@ -115,7 +115,7 @@ export const loginAdmin = (data) => {
   let dataObj = data
   return async (dispatch, getState) => {
     try {
-      let response = await fetch('https://backend-frank2.onrender.com/adminlogin', {
+      let response = await fetch('local/adminlogin', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -174,7 +174,7 @@ export const signupAdmin = (data) => {
   let dataObj = data
   return async (dispatch, getState) => {
     try {
-      let response = await fetch(`https://backend-frank2.onrender.com/adminsignup`, {
+      let response = await fetch(`local/adminsignup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -239,7 +239,7 @@ export const fetchUsers = ()=>{
       adminToken
     } = getState().userAuth
     try {
-      let response = await fetch('https://backend-frank2.onrender.com/users', {
+      let response = await fetch('local/users', {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -300,7 +300,7 @@ export const deleteUser = (id)=>{
     } = getState().userAuth
 
     try {
-      let response = await fetch(`https://backend-frank2.onrender.com/users/${id}`, {
+      let response = await fetch(`local/users/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -352,7 +352,7 @@ export const updateUser = (data)=>{
     } = getState().userAuth
 
     try {
-      let response = await fetch(`https://backend-frank2.onrender.com/users`, {
+      let response = await fetch(`local/users`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -409,7 +409,7 @@ export const fetchHistory = (user)=>{
     } = getState().userAuth
 
     try {
-      let response = await fetch(`https://backend-frank2.onrender.com/history/${user}`, {
+      let response = await fetch(`local/history/${user}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -460,7 +460,7 @@ export const updateHistory = (data)=>{
     } = getState().userAuth
 
     try {
-      let response = await fetch(`https://backend-frank2.onrender.com/history/${data._id}`, {
+      let response = await fetch(`local/history/${data._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -516,7 +516,7 @@ export const fetchLoan = (user)=>{
     } = getState().userAuth
 
     try {
-      let response = await fetch(`https://backend-frank2.onrender.com/loan/${user}`, {
+      let response = await fetch(`local/loan/${user}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -567,7 +567,7 @@ export const updateLoan = (data)=>{
     } = getState().userAuth
 
     try {
-      let response = await fetch(`https://backend-frank2.onrender.com/loan/${data._id}`, {
+      let response = await fetch(`local/loan/${data._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -620,7 +620,7 @@ export const fetchAccounts = (id)=>{
       adminToken
     } = getState().userAuth
     try {
-      let response = await fetch(`https://backend-frank2.onrender.com/admin-accounts/${id}`, {
+      let response = await fetch(`local/admin-accounts/${id}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -678,7 +678,7 @@ export const deleteAccount = (id)=>{
       adminToken
     } = getState().userAuth
     try {
-      let response = await fetch(`https://backend-frank2.onrender.com/admin-accounts/${id}`, {
+      let response = await fetch(`local/admin-accounts/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -729,7 +729,7 @@ export const updateAccount = (data)=>{
       adminToken
     } = getState().userAuth
     try {
-      let response = await fetch(`https://backend-frank2.onrender.com/admin-accounts`, {
+      let response = await fetch(`local/admin-accounts`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -782,7 +782,7 @@ export const createAccount = (data,user)=>{
     } = getState().userAuth
 
     try {
-      let response = await fetch(`https://backend-frank2.onrender.com/admin-accounts/${user}`, {
+      let response = await fetch(`local/admin-accounts/${user}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -840,7 +840,7 @@ export const fetchCard = (user)=>{
     } = getState().userAuth
 
     try {
-      let response = await fetch(`https://backend-frank2.onrender.com/card/${user}`, {
+      let response = await fetch(`local/card/${user}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -885,7 +885,7 @@ export const fetchCard = (user)=>{
 }
 
 
-//https://backend-frank2.onrender.com
+//local
 export const updateCard = (data)=>{
   return async (dispatch, getState) => {
     let {
@@ -893,7 +893,7 @@ export const updateCard = (data)=>{
     } = getState().userAuth
 
     try {
-      let response = await fetch(`https://backend-frank2.onrender.com/card/${data._id}`, {
+      let response = await fetch(`local/card/${data._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -950,7 +950,7 @@ export const updateAdmin = (data)=>{
     } = getState().userAuth
 
     try {
-      let response = await fetch(`https://backend-frank2.onrender.com/admin/${data._id}`, {
+      let response = await fetch(`local/admin/${data._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -1006,7 +1006,7 @@ export const credit = (data)=>{
     } = getState().userAuth
 
     try {
-      let response = await fetch(`https://backend-frank2.onrender.com/credit`, {
+      let response = await fetch(`local/credit`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -1060,7 +1060,7 @@ export const debit = (data,user)=>{
     } = getState().userAuth
 
     try {
-      let response = await fetch(`https://backend-frank2.onrender.com/debit`, {
+      let response = await fetch(`local/debit`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -1115,7 +1115,7 @@ export const sendEmail = (data,id)=>{
       adminToken
     } = getState().userAuth
     try {
-      let response = await fetch(`https://backend-frank2.onrender.com/sendemail`, {
+      let response = await fetch(`local/sendemail`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
